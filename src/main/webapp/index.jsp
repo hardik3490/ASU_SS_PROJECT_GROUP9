@@ -7,6 +7,8 @@
 <body>
     <h2>Hello World!</h2>
     <a href="login">Login</a>
+    <br/><br/>
+    <a href="register">Register</a>
     <!-- <input type="text" placeholder="Enter a name here"> -->
     <!-- <script src="js/bootstrap.js"></script> -->
 </body>

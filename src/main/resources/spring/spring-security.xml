@@ -8,8 +8,9 @@
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	<http use-expressions="true">
 		<intercept-url pattern="/index*" access="permitAll" />
-		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/login*" access="permitAll" />
+		<intercept-url pattern="/register*" access="permitAll" />
+		<intercept-url pattern="/saveDetails" access="permitAll" />				
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
 

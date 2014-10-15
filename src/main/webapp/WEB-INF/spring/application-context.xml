@@ -14,8 +14,8 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
-	
-	
+
+
 	<!-- Ensures that any resource requests not handled by Spring MVC mappings 
 		will be delegated back to the Servlet container -->
 	<!-- <mvc:default-servlet-handler /> -->
@@ -40,9 +40,14 @@
 	<!-- Import spring security configurations -->
 	<import resource="classpath*:spring/spring-security.xml" />
 
-	<!-- <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
-		<property name="basenames"> <list> <value>validation-message</value> </list> 
-		</property> </bean> -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>/WEB-INF/messages/validation-messages</value>
+			</list>
+		</property>
+	</bean>
 
 	<!-- Import Beans -->
 	<!-- <import resource="classpath:spring/hibernateBeans.xml" /> -->

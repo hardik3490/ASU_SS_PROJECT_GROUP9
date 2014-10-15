@@ -13,6 +13,7 @@
 	
 	<security:authorize access="hasRole('ROLE_ADMIN')">
 		This text is only visible to an admin
+		<a href="register">Register</a>
 		<br/>
 	</security:authorize>
 
