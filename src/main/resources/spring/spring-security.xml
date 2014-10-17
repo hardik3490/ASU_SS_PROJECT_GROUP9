@@ -29,10 +29,10 @@
 	</authentication-manager>
 
 	<beans:bean name="customAuthenticationProvider"
-		class="com.ss.group9.security.CustomAuthenticationProvider" />
+		class="asu.ss.group9.security.CustomAuthenticationProvider" />
 
 	<beans:bean id="redirectRoleStrategy"
-		class="com.ss.group9.security.RoleBasedAuthenticationSuccessHandler">
+		class="asu.ss.group9.security.RoleBasedAuthenticationSuccessHandler">
 		<beans:property name="roleUrlMap">
 			<beans:map>
 				<beans:entry key="ROLE_SYSTEM" value="/homepage.jsp" />
