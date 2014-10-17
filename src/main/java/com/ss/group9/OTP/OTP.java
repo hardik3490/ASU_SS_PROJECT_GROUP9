@@ -1,5 +1,10 @@
 package com.ss.group9.OTP;
 
+/**
+ * OTP class to generate OTP 
+ * 
+ * @author Savitha Raghunathan
+ */
 
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
@@ -9,11 +14,15 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class OTP {
 
-	public OTP() {
-		
-	}
     private static final int[] DIGITS_POWER= {1,10,100,1000,10000,100000,1000000,10000000,100000000 };
-    
+
+    /**
+     *  Generate hash value based on the given algorithm type 
+     * @param Algotype - type of the algorithm used in hash function
+     * @param keyBytes - key  
+     * @param text - text that has to be hashed
+     * @return byte array of hash
+     */
 	private static byte[] hmacSHA(String Algotype,byte[] keyBytes,byte[] text)
 	{
 		try
@@ -42,6 +51,12 @@ public class OTP {
 		return null;
 	}
 	
+	
+	/**
+	 * convert the given hex string into a byte array
+	 * @param input - hex string 
+	 * @return - byte array 
+	 */
 	private static byte[] convertToBytes(String input)
 	{
 		byte[] byteArray=new BigInteger("0"+input,16).toByteArray();
@@ -52,6 +67,14 @@ public class OTP {
 	
 	}
 	
+	/**
+	 * generates OTP 
+	 * @param key - seed 
+	 * @param digits - number of digits in OTP
+	 * @param time - will be used as a text that has to be hashed
+	 * @param algoType - Algorithm that will be used to generate hash
+	 * @return OTP
+	 */
 	private static String generateOTP(byte[] key,String digits,String time,String algoType)
 	{
 		int noOfDigits= Integer.decode(digits).intValue();
